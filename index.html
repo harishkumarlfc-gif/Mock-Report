@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -44,8 +43,8 @@
 <body class="bg-white text-gray-900 sans-text antialiased selection:bg-royal-100 selection:text-royal-900">
 
     <!-- Top Sticky Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative z-50">
             <div class="flex items-center space-x-3">
                 <span class="serif-title font-bold text-lg tracking-tight text-navy-900">GTM Unbound <span class="text-royal-600 font-normal">×</span> Aurelia Global</span>
                 <span class="hidden sm:inline-block px-2.5 py-0.5 text-xs font-semibold bg-royal-50 text-royal-800 rounded-full border border-royal-100">Q3–Q4 2026 Executive Review</span>
@@ -83,10 +82,10 @@
                 </div>
 
                 <!-- Global Slicer Controls -->
-                <div class="flex flex-wrap items-center gap-3 bg-white/10 backdrop-blur-md p-2 rounded-xl border border-white/10 text-xs">
+                <div class="flex flex-wrap items-center gap-3 bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 text-xs relative z-20">
                     <div>
                         <label class="block text-gray-300 text-[10px] uppercase tracking-wider mb-1">Corridor Filter</label>
-                        <select id="corridorFilter" onchange="filterData()" class="bg-navy-950 text-white px-3 py-1.5 rounded-lg border border-white/20 focus:outline-none focus:border-royal-400">
+                        <select id="corridorFilter" onchange="filterData()" class="bg-navy-950 text-white px-3 py-1.5 rounded-lg border border-white/20 focus:outline-none focus:border-royal-400 cursor-pointer">
                             <option value="all">All Corridors (Global)</option>
                             <option value="bengaluru">Bengaluru Hub</option>
                             <option value="sanfrancisco">San Francisco Hub</option>
@@ -94,7 +93,7 @@
                     </div>
                     <div>
                         <label class="block text-gray-300 text-[10px] uppercase tracking-wider mb-1">Timeframe Slicer</label>
-                        <select id="timeframeFilter" onchange="filterData()" class="bg-navy-950 text-white px-3 py-1.5 rounded-lg border border-white/20 focus:outline-none focus:border-royal-400">
+                        <select id="timeframeFilter" onchange="filterData()" class="bg-navy-950 text-white px-3 py-1.5 rounded-lg border border-white/20 focus:outline-none focus:border-royal-400 cursor-pointer">
                             <option value="all">Q3–Q4 Cumulative</option>
                             <option value="september">September 2026</option>
                             <option value="october">October 2026</option>
@@ -148,7 +147,7 @@
                 <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="serif-title font-bold text-lg text-navy-900">Velocity & Distribution</h3>
-                        <button onclick="toggleSnapshotChart()" class="text-xs bg-royal-600 text-white px-3 py-1 rounded-lg hover:bg-royal-700 transition">Toggle View</button>
+                        <button onclick="toggleSnapshotChart()" class="text-xs bg-royal-600 text-white px-3 py-1 rounded-lg hover:bg-royal-700 transition cursor-pointer">Toggle View</button>
                     </div>
                     <div class="relative h-64 w-full">
                         <canvas id="snapshotChart"></canvas>
@@ -505,7 +504,7 @@
     <!-- Interactive Modal -->
     <div id="leadModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
         <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl border border-gray-100 relative">
-            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg font-bold">×</button>
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg font-bold cursor-pointer">×</button>
             <div id="modalContent" class="space-y-4">
                 <!-- Dynamically populated -->
             </div>
@@ -556,7 +555,6 @@
             const corridor = document.getElementById('corridorFilter').value;
             const timeframe = document.getElementById('timeframeFilter').value;
             
-            // Dynamic UI adjustment based on filters
             const mqlEl = document.getElementById('heroMqlCount');
             const sqlEl = document.getElementById('heroSqlCount');
             const eventEl = document.getElementById('heroEventCount');
@@ -608,7 +606,7 @@
                     <p><strong>Pipeline Stage:</strong> Initial Discovery & Corridor Fit</p>
                     <p><strong>Source:</strong> GTM Unbound Curated Event Series</p>
                 </div>
-                <button onclick="closeLeadModal()" class="w-full bg-navy-900 text-white py-2 rounded-xl text-sm font-semibold hover:bg-navy-950 transition">Close Dossier</button>
+                <button onclick="closeLeadModal()" class="w-full bg-navy-900 text-white py-2 rounded-xl text-sm font-semibold hover:bg-navy-950 transition cursor-pointer">Close Dossier</button>
             `;
             modal.classList.remove('hidden');
         }
@@ -619,5 +617,3 @@
     </script>
 </body>
 </html>
-
-```
